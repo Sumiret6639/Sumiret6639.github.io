@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>作業練習：元件變換</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="images/favicon.ico" rel="shortcut icon">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/stylesheets/all.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/regular.js" integrity="sha384-t7yHmUlwFrLxHXNLstawVRBMeSLcXTbQ5hsd0ifzwGtN7ZF7RZ8ppM7Ldinuoiif" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>    <script src="/javascripts/vendor.js"></script>
+  </head>
+  
+  <body class="bg-lighter">
+    <div class="col-md-9 post">      
+    <!-- 練習開始 -->
+    <h1 class="mt-0 text-muted">作業練習：元件變換</h1>
+    <h3>模板練習作業：Ajax 資料內容呈現</h3>
+    <p>本作業一定要用到元件。</p>
+    <div class="alert alert-secondary">
+      <p>提示：</p>
+      <ol class="mb-0">
+        <li>將資料內容透過 "元件" 呈現</li>
+        <li>製作城市過濾選項</li>
+        <li>將內層資料透過 emit 傳遞到外層 (作為另一個關注城市的呈現)</li>
+        <li>依據不同污染呈現不同色彩</li>
+        <li>加分題：透過 localStorage 儲存上次關注的城市</li>
+      </ol>
+    </div>
+
+    <div id="app">
+      <select name="" id="" class="form-control mb-3" v-model="filter" > 
+        <option value="">--- 請選擇城市 ---</option>
+        <option v-for="(item,key) in location" :value="item">{{item}}</option>
+      </select>
+
+      
+      <div>
+        <h4>關注城市</h4>
+        <div class="card-columns">
+          <div v-for="(item, key) in getStaredData" is="citybox" :items="item" v-on:staredok="getStared">
+            <template slot="fullstar"><i class="fas fa-star"></i> </template>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="card-columns">
+        <div is="citybox" 
+        v-for="(item, key) in selectZone" 
+        :items="item"
+        v-on:staredok="getStared">
+        </div>
+      </div>
+    </div>
+
+<script type="text/x-template" id="box">
+  <div class="card" :class="dataClass">
+    <div class="card-header">{{items.County}}-{{items.SiteName}}
+      <a href="#" class="float-right" @click.prevent="staredItem()">
+        <slot name="fullstar"><i class="far fa-star"></i></slot>
+      </a>
+    </div>
+    <div class="card-body">
+      <ul class="list-unstyled">
+        <li>AQI指數: {{items.County}}</li>
+        <li>PM2.5: {{items['PM2.5']}}</li>
+        <li>說明: {{items.Status}}</li>
+      </ul>
+    </div>
+  </div>
+</script>
+
+
+<script>
+// API 來源
+// https://opendata.epa.gov.tw/Data/Contents/AQI/
+
+Vue.component('citybox',{
+  props: ['items'],
+  template: "#box",
+
+  data: function () {
+    return { 
+      dataStared: this.items.isStared
+    }
+  },
+
+  methods: {
+    staredItem: function(){
+      this.$emit('staredok',this.items)
+    },
+  },
+
+  computed: {
+    dataClass: function(){
+      switch(this.items.Status){
+        case '良好':
+        return 'default'
+
+        case '普通':
+        return 'status-aqi2'
+
+        case '對敏感族群不健康':
+        return 'status-aqi3'
+
+        case '對所有族群不健康':
+        return 'status-aqi4'
+
+        case '非常不健康':
+        return 'status-aqi5'
+
+        case '危害':
+        return 'status-aqi6'        
+      }
+    },
+    //從localstorage下來的資料無法計算，先棄，練習寫slot
+    // changedStar: function(){
+    //   if(this.dataStared){
+    //     return 'fas fa-star'
+    //   }else{
+    //     return 'far fa-star'
+    //   }
+    // }  
+  }
+});
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    data: [],
+    location: [],
+    stared: JSON.parse(localStorage.getItem('favorite')) || [] ,
+    filter: '',
+  },
+  // 請在此撰寫 JavaScript
+  methods: {
+    getData() {
+      const vm = this;
+      const api = 'http://opendata2.epa.gov.tw/AQI.json';
+      // 使用 jQuery ajax
+      $.get(api).then(function (response) {
+        vm.data = response;
+        vm.data.forEach((item) => {
+          vm.location.push(item.County)
+        })
+        vm.location = vm.location.filter((item, index, arr) => {
+          return arr.indexOf(item) === index
+        })
+      });
+    },
+
+    getStared: function(item){
+      const vm = this
+      let key = vm.stared.findIndex((item2)=>{
+        return item.SiteName == item2
+      })
+      if(vm.stared.indexOf(item.SiteName) === -1){
+        vm.stared.push(item.SiteName)
+      }else{
+        vm.stared.splice(key,1)
+      }
+      localStorage.setItem('favorite', JSON.stringify(vm.stared))
+    },
+  },
+
+  computed: {
+    //  computed回傳值一定要return
+    selectZone(){
+      const vm = this
+      if(vm.filter !== ""){
+        return vm.data.filter((el) => {
+          return el.County == vm.filter && vm.stared.indexOf(el.SiteName) === -1
+        })
+      }else{
+        return vm.data.filter((item) => {
+          // 找出沒篩選過城市又不在stared裡的資料
+          return vm.stared.indexOf(item.SiteName) === -1;
+        })
+      }  
+    },
+
+    getStaredData(){
+      const vm = this
+      return vm.data.filter((item, index, arr)=>{
+        return vm.stared.indexOf(item.SiteName) !== -1
+      })
+    }
+  },
+
+  created() { 
+    this.getData() 
+    
+    // const vm = this;
+    // const api = 'http://opendata2.epa.gov.tw/AQI.json';
+    // // 使用 jQuery ajax
+    // $.get(api).then(function( response ) {
+    //   vm.data = response;
+    //   vm.data.forEach((item) => {
+    //     vm.county.push(item.County)
+    //   })
+    //   vm.location = vm.county.filter((item, index, arr) => {
+    //     return arr.indexOf(item) === index
+    //   })
+    // });
+  },
+
+});
+
+</script>
+<!-- 
+狀態對應表
+'良好',
+'status-aqi2' '普通',
+'status-aqi3' '對敏感族群不健康',
+'status-aqi4' '對所有族群不健康',
+'status-aqi5' '非常不健康',
+'status-aqi6' '危害'
+--> 
+<style>
+.status-aqi2 {
+  background-color: #ffff00;
+}
+.status-aqi3 {
+  background-color: #ff7e00;
+}
+.status-aqi4 {
+  background-color: #ff0000;
+}
+.status-aqi5 {
+  background-color: #8f3f97;
+}
+.status-aqi6 {
+  background-color: #7e0023;
+}
+</style>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
