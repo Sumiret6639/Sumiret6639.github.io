@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,500i,700,900,900i&display=swap');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    /* border: 0; */
+    font-size: 100%;
+    /* font: inherit; */
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+    /* border: 1px solid #000; */
+}
+
+html,body{
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+.profile-wrap{
+    box-sizing: border-box;
+    width: 1920px;
+    padding: 0 360px;
+}
+
+.en{
+    margin-left: 16px;
+    color: #A00404;
+}
+
+.fz-24{
+    font-size: 24px;
+    line-height: 36px;
+}
+
+.fz-32{
+    font-size: 32px;
+    line-height: 45px;
+}
+
+.mb-24{
+    margin-bottom: 24px;
+}
+
+.mb-32{
+    margin-bottom: 32px;
+}
+
+.mb-72{
+    margin-bottom: 72px;
+}
+
+.profile{
+    /* border: 1px solid #000; */
+    margin-bottom: 72px;
+}
+
+.point{
+    margin-left: 0;
+}
+
+.point::before{
+    display: inline-block;
+    vertical-align: middle;
+    content: "";
+    border-radius: 100%;
+    width: 16px;
+    height: 16px;
+    background-color: #96A9C4;
+    margin-right: 16px;
+    margin-left: 0;
+}
+
+.name{
+    width: 288px;
+    height: 180px;
+    font-size: 80px;  
+}
+
+.pic{
+    display: block;
+    width: 324px;
+    height: 324px;
+    border-radius: 50%;
+    margin: 48px 0px;
+}
+
+.profile-contain{
+    height: 105px;
+}
+
+.profile-contain p{
+    margin-left: 32px;
+}
+
+.education{
+    height: 167px;
+}
+
+.education-contains{
+    position: relative;
+}
+
+.line{
+    height: 66px;
+    border-left: 1px solid #96A9C4;
+    position: absolute;
+    top: 18px;
+    left: 8px;
+}
+
+.skill{
+    width: 100%;
+    height: 494px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+}
+
+.skill-background{
+    width: 1920px;
+    height: 360px;
+    background-color: #96A9C4;
+    z-index: -1;
+    position: absolute;
+}
+
+.skill-content{
+    background-color: #415165;
+    width: 1200px;
+    height: 494px;
+    z-index: 100;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.skill hr{
+    width: 996px;
+    color: #fff;
+}
+
+.skill-list{
+    height: 321.5px;
+    padding: 0px 0px 0px 24px;
+    border-left: 1px solid #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.experience{
+    height: 744px;
+}
+
+.experience hr{
+    width: 1200px;
+    color: #000;
+    margin-bottom: 22px;
+}
+
+.experience-list{
+    border-left: 1px solid #96A9C4;
+    padding: 0px 0px 0px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.experience-item img{
+    margin-top: 8px;
+    width: 89px;
+    height: 66px;
+}
+
+.experience-item p{
+    width: 642px;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
+}
+
+.footer{
+    width: 1920px;
+    /* height: 401px;  */
+    background-color: #415165;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding-top: 31px;
+    padding-bottom: 48px;
+    text-align: center;
+}
+
+.footer hr{
+    width: 1200px;
+}
+
+.mb-8{
+    margin-bottom: 8px;
+}
+
+.flex-row{
+    width: 192px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-contain{
+    font-weight: normal;
+    align-items: center;
+}
