@@ -152,7 +152,7 @@ h2 {
 }
 
 .banner{
-    background-image: url("/images/banner.png");
+    background-image: url("../images/banner.png");
     background-size: cover;
     height: 840px;
     text-align: right;
@@ -245,7 +245,7 @@ h2 {
 }
 
 .co-brandings{
-    background-image: url("/images/bg.png");
+    background-image: url("../images/bg.png");
     background-size: cover;
     padding: 64px 0px 300px 0px;
 }
@@ -307,7 +307,7 @@ h2 {
     width: 40%;
     height: 95%;
     margin-right: -30%;
-    background-image: url("/images/more.png");
+    background-image: url("../images/more.png");
 }
 
 .img-list3{
