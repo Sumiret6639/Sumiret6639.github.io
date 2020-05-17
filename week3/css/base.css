@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,500i,700,900,900i&display=swap');
+
+/* 通用格式區 */
+
+html,body{
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    /* overflow-x: hidden; */
+}
+
+*{
+    box-sizing: border-box;
+}
+
+h2 {
+    color: #650300;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 72px;
+    margin-bottom: 60px;
+}
+
+.fz-16{
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.mr-8{
+    margin-right: 8px;
+}
+
+.ml-24{
+    margin-left: 24px;
+}
+
+.flex-column-jcc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.flex-column-aic{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flex-center-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-size-auto{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.db{
+    display: block;
+}
+
+.dn{
+    display: none;
+}

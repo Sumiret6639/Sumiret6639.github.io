@@ -1,0 +1,162 @@
+.img-size-auto{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.p-0{
+    padding: 0;
+}
+
+.p-32{
+    padding: 32px;
+}
+
+.mr-24{
+    margin-right: 24px;
+} 
+
+.ml-32{
+    margin-left: 32px;
+}
+
+.ml-26{
+    margin-left: 26px;
+}   
+
+.p-40-10per{
+    padding: 40px 0px 0px 10%;
+}
+
+.bg-white-green{
+    background-color: $white-green-primary;
+}
+
+.main-admin{
+
+    h3{
+        font-weight: bold;
+    }
+
+    table{
+        border-collapse: collapse;
+        width: 100%;
+        height: 100%;
+        margin-bottom: 63px;
+
+        th, tr, td{
+            font-size: 16px;
+            padding: 19px 0px 17px 0px;
+        }
+    }
+        
+    thead{
+        th{
+            border-top: 0;
+        }
+    }
+
+    i{
+        width: 24px;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .fa-arrow-down{
+        font-size: 16px;
+        margin-left: 4px;
+        color: $green-primary;
+    }
+
+    .logo{
+        margin-bottom: 40px;
+    }
+
+    .sidebar{
+        padding-left: 32px;
+        padding-right: 112px;
+    }
+
+    .nav{
+        margin-bottom: 363px;
+    }
+
+    .nav-item{
+        font-size: 16px;
+        margin-bottom: 26px;
+        
+    }
+
+    .nav-link{
+        padding: 0;
+
+        span{
+            margin-right: 16px;
+        }
+
+        &:hover{
+            color: $green-primary
+        }
+        
+    }
+}
+
+.admin-infos{
+    display: flex;
+    justify-items: end;
+
+    .figure{
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+    }
+
+    .text-info{
+        font-size: 16px;
+        line-height: 24px;
+        margin-left: 16px;
+
+        .name{
+            color: $black-primary;
+        }
+
+        .email{
+            color: $gray-primary;
+        }
+    }
+    
+}
+
+.admin-control{
+    margin-bottom: 48px;
+
+    span{
+        font-size: 24px;
+        color: $green-primary
+    }
+}
+
+.page-item {
+    .page-link{
+        background-color: white;
+        color: $green-primary; 
+
+        &:hover{
+        background-color: $green-primary;
+        color: white;
+        }
+    }
+    
+    .active{
+        z-index: 3;
+        color: white;
+        background-color: $green-primary;
+        border-color: $green-primary;
+    }
+}
+
+
+
+
+
+

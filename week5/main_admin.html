@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <script src="https://kit.fontawesome.com/852e75749d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="main-admin container-fluid h-100">
+        <div class="row h-100">
+            <div class="col-2 p-0 h-100 bg-white-green">
+                <nav id="sidebarMenu" class="d-md-block sidebar collapse p-0">
+                    <div class="sidebar-sticky p-40-10per">
+                        <img src="./images/week5/logo-ANSWER.svg" alt="" class="logo img-size-auto">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">
+                                    <span data-feather="home">
+                                        <i class="fas fa-chart-bar"></i>
+                                    </span>
+                                    Dashboard <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span data-feather="file">
+                                        <i class="fas fa-comment-alt"></i>
+                                    </span>
+                                    Question
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span data-feather="shopping-cart">
+                                        <i class="fas fa-file-alt"></i>
+                                    </span>
+                                    Assignment
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span data-feather="users">
+                                        <i class="fab fa-youtube"></i>
+                                    </span>
+                                    Course
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span data-feather="bar-chart-2">
+                                        <i class="fas fa-user-friends"></i>
+                                    </span>
+                                    Admin
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span data-feather="layers">
+                                        <i class="fas fa-cog"></i>
+                                    </span>
+                                    Settings
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="admin-infos">
+                            <img src="./images/week5/andychen.jpeg" alt="" class="figure">
+                            <div class="text-info">
+                                <div class="name">Andy Chen</div>
+                                <div class="email">andy0401@mail.com</div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="col-10 p-0">
+                <div class="content p-32">
+                    <div class="admin-control d-flex align-items-center justify-content-between">
+                        <div class="text d-flex align-items-center">
+                            <h3>Admin</h3>
+                            <h5 class="ml-32 add-admin">
+                                <span>+</span>
+                                Add New Admin
+                            </h5>
+                        </div>
+                        <div class="icons">
+                            <i class="fas fa-search"></i>
+                            <i class="fas fa-bell ml-26"></i>
+                        </div>
+                    </div>                    
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    ID 
+                                    <span><i class="fas fa-arrow-down"></i></span>
+                                </th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Verified</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">#1</th>
+                                <td>Emir Wicks</td>
+                                <td>emir.wicks@mail.com</td>
+                                <td>Yes</td>
+                                <td class="text-right">
+                                    <i class="fas fa-eye mr-24"></i>
+                                    <i class="fas fa-pen"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">#2</th>
+                                <td>Zaina Goldsmith</td>
+                                <td>zaina.goldsmith@mail.com</td>
+                                <td>Yes</td>
+                                <td class="text-right">
+                                    <i class="fas fa-eye mr-24"></i>
+                                    <i class="fas fa-pen"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">#3</th>
+                                <td>Mahima Lopez</td>
+                                <td>Mahima.Lopez@mail.com</td>
+                                <td>Yes</td>
+                                <td class="text-right">
+                                    <i class="fas fa-eye mr-24"></i>
+                                    <i class="fas fa-pen"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">#4</th>
+                                <td>Pharrell Murray</td>
+                                <td>Pharrell.Murray@mail.com</td>
+                                <td>Yes</td>
+                                <td class="text-right">
+                                    <i class="fas fa-eye mr-24"></i>
+                                    <i class="fas fa-pen"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">#5</th>
+                                <td>Annika Mcbride</td>
+                                <td>Annika.Mcbride@mail.com</td>
+                                <td>Yes</td>
+                                <td class="text-right">
+                                    <i class="fas fa-eye mr-24"></i>
+                                    <i class="fas fa-pen"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">#1</th>
+                                <td>Emir Wicks</td>
+                                <td>emir.wicks@mail.com</td>
+                                <td>Yes</td>
+                                <td class="text-right">
+                                    <i class="fas fa-eye mr-24"></i>
+                                    <i class="fas fa-pen"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">#2</th>
+                                <td>Zaina Goldsmith</td>
+                                <td>zaina.goldsmith@mail.com</td>
+                                <td>Yes</td>
+                                <td class="text-right">
+                                    <i class="fas fa-eye mr-24"></i>
+                                    <i class="fas fa-pen"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">#3</th>
+                                <td>Mahima Lopez</td>
+                                <td>Mahima.Lopez@mail.com</td>
+                                <td>Yes</td>
+                                <td class="text-right">
+                                    <i class="fas fa-eye mr-24"></i>
+                                    <i class="fas fa-pen"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">#4</th>
+                                <td>Pharrell Murray</td>
+                                <td>Pharrell.Murray@mail.com</td>
+                                <td>Yes</td>
+                                <td class="text-right">
+                                    <i class="fas fa-eye mr-24"></i>
+                                    <i class="fas fa-pen"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">#5</th>
+                                <td>Annika Mcbride</td>
+                                <td>Annika.Mcbride@mail.com</td>
+                                <td>Yes</td>
+                                <td class="text-right">
+                                    <i class="fas fa-eye mr-24"></i>
+                                    <i class="fas fa-pen"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <nav aria-label="Page navigation example" class="r-0">
+                        <ul class="pagination justify-content-end">
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item "><a class="page-link active" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
